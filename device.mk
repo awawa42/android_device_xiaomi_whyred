@@ -17,16 +17,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
-# Consumerir
-BOARD_HAVE_IR := true
+# Camera
+PRODUCT_PACKAGES += \
+    libcamera_sdm660_shim \
+    libpiex_shim
 
 # FM
 BOARD_HAVE_QCOM_FM := true
 
-# Gatekeeper HAL
+# Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
+
+# IR
+BOARD_HAVE_IR := true
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -42,16 +47,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# Ramdisk
+# Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom.ramdisk \
     init.device.rc
-
-# Shims
-PRODUCT_PACKAGES += \
-    libcamera_sdm660_shim \
-    libpiex_shim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
