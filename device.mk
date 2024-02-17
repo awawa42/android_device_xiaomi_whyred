@@ -22,6 +22,11 @@ PRODUCT_PACKAGES += \
     libcamera_sdm660_shim \
     libpiex_shim
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    com.fingerprints.extension@1.0.vendor \
+    vendor.goodix.hardware.fingerprintextension@1.0.vendor
+
 # FM
 BOARD_HAVE_QCOM_FM := true
 
