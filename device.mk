@@ -47,7 +47,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# Rootdir
+# Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom.ramdisk \
